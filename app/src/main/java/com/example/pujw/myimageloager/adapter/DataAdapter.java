@@ -43,6 +43,7 @@ public class DataAdapter extends
 
     @Override
     public int getItemCount() {
+
         return mList.size();
     }
 
