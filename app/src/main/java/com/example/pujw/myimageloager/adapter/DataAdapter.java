@@ -23,6 +23,7 @@ public class DataAdapter extends
         RecyclerView.Adapter<DataAdapter.MyViewHolder> {
     private List<String> mList;
     private Context context;
+
     private MyImageloader imageloader;
     public DataAdapter(Context mContext,List<String> list){
         mList=list;
