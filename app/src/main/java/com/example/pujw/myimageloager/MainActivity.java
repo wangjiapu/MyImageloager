@@ -1,5 +1,7 @@
 package com.example.pujw.myimageloager;
 
+import android.content.Context;
+import android.os.Environment;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
@@ -9,10 +11,12 @@ import android.widget.ProgressBar;
 
 import com.example.pujw.myimageloager.adapter.DataAdapter;
 import com.example.pujw.myimageloager.presenter.MainPersenter;
+import com.example.pujw.myimageloager.view.A;
 import com.example.pujw.myimageloager.view.MainView;
 
 import java.util.LinkedList;
 import java.util.List;
+
 
 public class MainActivity extends AppCompatActivity implements MainView{
     private RecyclerView mRecyclerView;
@@ -27,6 +31,7 @@ public class MainActivity extends AppCompatActivity implements MainView{
         initView();
         mPersenter=new MainPersenter(this);
         mPersenter.fetchData();
+        A.context=this;
     }
 
     private void initView() {

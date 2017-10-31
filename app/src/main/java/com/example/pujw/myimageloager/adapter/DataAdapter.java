@@ -7,9 +7,12 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
+import com.bumptech.glide.Glide;
 import com.example.pujw.myimageloager.R;
 
 import java.util.List;
+
+import myImageloader.MyImageloader;
 
 /**
  * Created by PUJW on 2017/10/30.
@@ -19,9 +22,11 @@ public class DataAdapter extends
         RecyclerView.Adapter<DataAdapter.MyViewHolder> {
     private List<String> mList;
     private Context context;
+    private MyImageloader imageloader;
     public DataAdapter(Context mContext,List<String> list){
         mList=list;
         context=mContext;
+        imageloader=new MyImageloader();
     }
     @Override
     public MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
@@ -32,8 +37,13 @@ public class DataAdapter extends
 
     @Override
     public void onBindViewHolder(MyViewHolder holder, int position) {
-        holder.image.setImageDrawable(context.getResources()
-                .getDrawable(R.mipmap.ic_launcher));
+        /*Glide.with(context)
+                .load(mList.get(position))
+                .into(holder.image);*/
+
+        imageloader.displayImage(mList.get(position),holder.image);
+      /*  holder.image.setImageDrawable(context.getResources()
+                .getDrawable(R.mipmap.ic_launcher));*/
     }
 
     @Override
