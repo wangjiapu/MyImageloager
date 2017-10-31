@@ -37,13 +37,7 @@ public class DataAdapter extends
 
     @Override
     public void onBindViewHolder(MyViewHolder holder, int position) {
-        /*Glide.with(context)
-                .load(mList.get(position))
-                .into(holder.image);*/
-
         imageloader.displayImage(mList.get(position),holder.image);
-      /*  holder.image.setImageDrawable(context.getResources()
-                .getDrawable(R.mipmap.ic_launcher));*/
     }
 
     @Override
