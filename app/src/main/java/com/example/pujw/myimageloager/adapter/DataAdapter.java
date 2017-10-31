@@ -51,6 +51,9 @@ public class DataAdapter extends
         ImageView image;
         public MyViewHolder(View itemView) {
             super(itemView);
+
+
+
             image=itemView.findViewById(R.id.image);
         }
     }
