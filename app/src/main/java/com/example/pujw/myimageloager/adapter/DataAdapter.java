@@ -28,6 +28,7 @@ public class DataAdapter extends
     public DataAdapter(Context mContext,List<String> list){
         mList=list;
         context=mContext;
+
         imageloader=new MyImageloader();
     }
     @Override
