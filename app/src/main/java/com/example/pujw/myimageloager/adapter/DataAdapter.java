@@ -27,6 +27,10 @@ public class DataAdapter extends
         mList=list;
         context=mContext;
         imageloader=new MyImageloader();
+
+
+
+
     }
     @Override
     public MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
