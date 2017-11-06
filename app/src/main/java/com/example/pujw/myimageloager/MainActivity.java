@@ -4,6 +4,7 @@ import android.content.Context;
 import android.os.Environment;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
@@ -13,6 +14,7 @@ import com.example.pujw.myimageloager.adapter.DataAdapter;
 import com.example.pujw.myimageloager.presenter.MainPersenter;
 import com.example.pujw.myimageloager.view.A;
 import com.example.pujw.myimageloager.view.MainView;
+import com.example.pujw.myimageloager.view.MyItemDecoration;
 
 import java.util.LinkedList;
 import java.util.List;
@@ -38,6 +40,8 @@ public class MainActivity extends AppCompatActivity implements MainView{
         mProgressBar= (ProgressBar) findViewById(R.id.pb);
         mRecyclerView= (RecyclerView) findViewById(R.id.recyclerview);
         mRecyclerView.setLayoutManager(new GridLayoutManager(this,3));
+        mRecyclerView.addItemDecoration(new MyItemDecoration(this,
+                DividerItemDecoration.HORIZONTAL));
         mAdapter=new DataAdapter(this,mlist);
         mRecyclerView.setAdapter(mAdapter);
 
